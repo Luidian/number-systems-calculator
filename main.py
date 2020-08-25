@@ -33,6 +33,7 @@ class Calc(QtWidgets.QMainWindow):
         self.initUi()
         
     def initUi(self):
+        # Кнопочки
         self.ui.zero.clicked.connect(lambda: self.entry_field(0))
         self.ui.one.clicked.connect(lambda: self.entry_field(1))
         self.ui.two.clicked.connect(lambda: self.entry_field(2))
@@ -65,6 +66,7 @@ class Calc(QtWidgets.QMainWindow):
         self.ui.lineEdit_2.clear()
         self.ui.lineEdit_2.setText(str(res))
 
+    # Ф-я расчета
     def convert(self):
         try:
             self.output_field(convert_base(self.ui.lineEdit.text(), self.ui.In.currentIndex()+2, self.ui.Of.currentIndex()+2))
